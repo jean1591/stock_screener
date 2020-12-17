@@ -5,6 +5,7 @@ import StockContext from "../../context/stock/stockContext";
 
 // COMPONENTS
 import StockCard from "./StockCard";
+import StocksRecap from "./StocksRecap";
 
 const Stocks = () => {
 	// CONTEXT
@@ -19,25 +20,14 @@ const Stocks = () => {
 		[]
 	);
 
+	// console.log(stocks);
+
 	return (
 		<Fragment>
-			{stocks.length > 0 ? (
+			{/* <StocksRecap meta={stocks.meta} /> */}
+			{stocks && stocks.stocks && stocks.stocks.length > 0 ? (
 				<div className="row justify-content-center">
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
-					{stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
+					{stocks.stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
 				</div>
 			) : (
 				<h3 className="text-center">Loading</h3>
