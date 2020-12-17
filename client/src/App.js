@@ -11,11 +11,11 @@ import StockState from "./context/stock/StockState";
 const App = () => {
 	return (
 		<div className="App">
-			<div className="container">
-				<StockState>
+			<StockState>
+				<div className="m-5">
 					<Stocks />
-				</StockState>
-			</div>
+				</div>
+			</StockState>
 		</div>
 	);
 };
