@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, Fragment } from "react";
+import React, { useContext, useEffect } from "react";
 
 // CONTEXT
 import StockContext from "../../context/stock/stockContext";
 
 // COMPONENTS
 import StockCard from "./StockCard";
-import StocksRecap from "./StocksRecap";
 
 const Stocks = () => {
 	// CONTEXT
@@ -27,8 +26,7 @@ const Stocks = () => {
 	// console.log(stocks);
 
 	return (
-		<Fragment>
-			{/* <StocksRecap meta={stocks.meta} /> */}
+		<div className="m-5">
 			{stocks && stocks.stocks && stocks.stocks.length > 0 ? (
 				<div className="row justify-content-center">
 					{stocks.stocks.map((stock, i) => <StockCard key={i} stock={stock} />)}
@@ -36,7 +34,7 @@ const Stocks = () => {
 			) : (
 				<h3 className="text-center">Loading</h3>
 			)}
-		</Fragment>
+		</div>
 	);
 };
 
