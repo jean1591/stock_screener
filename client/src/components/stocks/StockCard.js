@@ -20,7 +20,7 @@ const StockCard = ({ stock }) => {
 					stock.stocks.length > 0 &&
 					stock.stocks.map((account) => (
 						<Card.Text className="m-0">
-							{account.name.toUpperCase()}:{" "}
+							{account.name.toUpperCase()} <small>({account.stock})</small>:{" "}
 							<span className={`text-${account.evolution.totalDifference > 0 ? "success" : "danger"}`}>
 								€{account.evolution.totalDifference}
 							</span>{" "}
