@@ -15,6 +15,10 @@ const Stocks = () => {
 	useEffect(
 		() => {
 			setStocks();
+			const interval = setInterval(() => {
+				setStocks();
+			}, 1000 * 60 * 60);
+			return () => clearInterval(interval);
 		},
 		// eslint-disable-next-line
 		[]
