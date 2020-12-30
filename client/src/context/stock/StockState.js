@@ -19,7 +19,8 @@ const StockState = (props) => {
 	// Set Stocks
 	const setStocks = async () => {
 		try {
-			console.log(`State => Calling API`);
+			const now = new Date();
+			console.log(`State => Calling API (${now.toLocaleTimeString()})`);
 			const res = await axios.get(`/stocks`);
 			dispatch({ type: SET_STOCKS, payload: res.data });
 		} catch (error) {
